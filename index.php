@@ -42,8 +42,8 @@ if (!$conn) {
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="assets/css/bootstrap-select.css">
 
-    <!-- <script src="assets/js/validation_v1.0.js" type="text/javascript" charset="utf-8" async defer></script> -->
-    <title>NEEF - Online Application Form</title>
+    <script src="assets/js/validation_v1.0.js" type="text/javascript" charset="utf-8" async defer></script>
+    <title>NEEF - Online Application Form Changes</title>
 </head>
 
 <body style="background: #fce8d5;">
