@@ -1,0 +1,6 @@
+.customBtn{
+	color: red;
+}
+.customBtn:hover{
+	color: white;
+}
