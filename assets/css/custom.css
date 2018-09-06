@@ -1,0 +1,304 @@
+body {
+    /*overflow: hidden;*/
+
+    height: 100vh;
+
+    background-image: url('../img/particle_background.png');
+    background-size: cover;
+
+    overflow: all;
+}
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    /* change if the mask should have another color then white */
+    z-index: 99;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: #fff;
+    /* makes sure it stays on top */
+}
+
+#status {
+    position: absolute;
+    /* centers the loading animation horizontally one the screen */
+    top: 50%;
+    left: 50%;
+
+    width: 200px;
+    height: 200px;
+    margin: -100px 0 0 -100px;
+    /* centers the loading animation vertically one the screen */
+    background-image: url(https://raw.githubusercontent.com/niklausgerber/PreLoadMe/master/img/status.gif);
+    /* path to your loading animation */
+    background-repeat: no-repeat;
+    background-position: center;
+    /* is width and height divided by two */
+}
+
+/* Headline */
+.headline {
+    display: table-cell;
+
+    height: 40vh;
+    margin-left: 5em;
+    padding-top: 3em;
+    padding-left: 5em;
+
+    vertical-align: bottom;
+}
+
+.headline p {
+    font-family: monospace;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+
+    margin-bottom: 2.4rem;
+
+    text-align: left;
+    white-space: nowrap;
+    letter-spacing: .15em;
+    text-transform: capitalize;
+
+    color: white;
+    color: #fff;
+}
+
+.headline h1 {
+    font-family: monospace;
+    font-size: 7rem;
+    font-weight: 700;
+    line-height: 1;
+
+    margin-bottom: 2.4rem;
+
+    text-align: left;
+    white-space: nowrap;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+
+    color: white;
+    color: #fff;
+}
+
+.homeBtns {
+    text-align: center;
+}
+
+.homeBtns button {
+    font-size: xx-large;
+
+    width: 75vh;
+    height: 3em;
+    margin: 30px 30px 30px 30px;
+}
+
+.adjustNavItems {
+    float: right;
+}
+
+.customA {
+    color: white;
+    /*padding-left: 10em;*/
+}
+
+.customA:hover {
+    color: #157dfa;
+}
+
+.blink_me {
+    animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: white;
+   vertical-align: middle;
+   height: 3em;
+   text-align: center;
+   display: table;
+   align-items: center;
+}
+.footer span{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  height: 100%;
+}
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: -10;
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+    background-color: #000;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+
+/* contact us page*/
+section#contact {
+    /*background-color: #222222;*/
+    /*background-image: url('http://artdnaswitchbd.com/componants/images/map-image.png');*/
+    background-position: center;
+    background-repeat: no-repeat;
+}
+section {
+    padding: 30px 0px;
+}
+section#contact .section-heading {
+    color: white;
+}
+section#contact .form-group {
+    margin-bottom: 25px;
+}
+section#contact .form-group input,
+section#contact .form-group textarea {
+    padding: 20px;
+}
+section#contact .form-group input.form-control {
+    height: auto;
+}
+section#contact .form-group textarea.form-control {
+    height: 236px;
+}
+section#contact .form-control:focus {
+    border-color: #fed136;
+    box-shadow: none;
+}
+section#contact ::-webkit-input-placeholder {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #eeeeee;
+}
+.gellary_bg_none img{
+  width: 100%;
+  height: 250px;
+}
+section#contact :-moz-placeholder {
+    /* Firefox 18- */
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #eeeeee;
+}
+section#contact ::-moz-placeholder {
+    /* Firefox 19+ */
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #eeeeee;
+}
+section#contact :-ms-input-placeholder {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #eeeeee;
+}
+section#contact .text-danger {
+    color: #e74c3c;
+}
+
+.about_our_company{
+    text-align: center;
+}
+.about_our_company h1{
+    font-size: 25px;
+}
+.titleline-icon {
+    position: relative;
+    max-width: 100px;
+    border-top: 4px double #F99700;
+    margin: 20px auto 20px;
+}
+.titleline-icon:after {
+    position: absolute;
+    top: -11px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-family: 'FontAwesome';
+    content: "\f141";
+    font-size: 20px;
+    line-height: 1;
+    color: #F99700;
+    text-align: center;
+    vertical-align: middle;
+    width: 40px;
+    height: 20px;
+    background: #ffffff;
+}
+
+/********************************************/
+
+.aboutUs{
+  padding-top: 5em;
+  overflow-y: auto;
+  padding-bottom: 5em;
+}
+
+.pListHead{
+  margin-top: 2em;
+  background: transparent;
+  color: white;
+}
+
+.customA{
+  color: white;
+}/*
+.customA:active{
+  
+}*/
