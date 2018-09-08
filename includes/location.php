@@ -48,7 +48,7 @@
 
         
         <!-- Tehsil -->
-        <div class="row">Tehsil:<label class="col-md control-label"></label></div>
+        <div class="row">Tehsil/Taluqa:<label class="col-md control-label"></label></div>
         <div class="row">
             <select id="tehsil" class="col-md form-control" name="tehsil"></select>
         <label class="col-md control-label" id="tehsilErr" name="tehsilErr" style="color: red; font-weight: bold;"></label>

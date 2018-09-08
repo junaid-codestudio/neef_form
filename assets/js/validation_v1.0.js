@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 
-    $("#submit").hide();
+   v();
 
     function v() {
         $("#firstName").bind('input propertychange', function() {
@@ -16,16 +16,16 @@ $(document).ready(function() {
                 $("#firstNameErr").text('');
             }
         });
-        $("#middleName").bind('input propertychange', function() {
-            var str = $("#middleName").val();
-            if (str == "") {
-                $("#middleName").css("border-color", "red");
-                $('#middleNameErr').text('Please Enter Middle Name ');
-            } else {
-                $("#middleName").css("border-color", "");
-                $("#middleNameErr").text('');
-            }
-        });
+        // $("#middleName").bind('input propertychange', function() {
+        //     var str = $("#middleName").val();
+        //     if (str == "") {
+        //         $("#middleName").css("border-color", "red");
+        //         $('#middleNameErr').text('Please Enter Middle Name ');
+        //     } else {
+        //         $("#middleName").css("border-color", "");
+        //         $("#middleNameErr").text('');
+        //     }
+        // });
         $("#lastName").bind('input propertychange', function() {
             var str = $("#lastName").val();
             if (str == "") {
@@ -40,7 +40,7 @@ $(document).ready(function() {
         // title
         $("#title").bind('input propertychange', function() {
             var str = $("#title").val();
-            if (str == "Mr." || str == "Mrs." || str == "Dr." || str == "Engr." || str == "Miss") {
+            if (str == "Mr." || str == "Mrs." || str == "Dr." || str == "Engr." || str == "Ms.") {
                 $("#title").css("border-color", "");
                 $("#titleErr").text('');
             } else {
@@ -62,16 +62,16 @@ $(document).ready(function() {
 
             }
         });
-        $("#f_hmiddleName").bind('input propertychange', function() {
-            var str = $("#f_hmiddleName").val();
-            if (str == "") {
-                $("#f_hmiddleName").css("border-color", "red");
-                $('#f_hmiddleNameErr').text('Please Enter Father/Husband Middle Name ');
-            } else {
-                $("#f_hmiddleName").css("border-color", "");
-                $("#f_hmiddleNameErr").text('');
-            }
-        });
+        // $("#f_hmiddleName").bind('input propertychange', function() {
+        //     var str = $("#f_hmiddleName").val();
+        //     if (str == "") {
+        //         $("#f_hmiddleName").css("border-color", "red");
+        //         $('#f_hmiddleNameErr').text('Please Enter Father/Husband Middle Name ');
+        //     } else {
+        //         $("#f_hmiddleName").css("border-color", "");
+        //         $("#f_hmiddleNameErr").text('');
+        //     }
+        // });
         $("#f_hlastName").bind('input propertychange', function() {
             var str = $("#f_hlastName").val();
             if (str == "") {
@@ -101,22 +101,7 @@ $(document).ready(function() {
             }
         });
 
-        // DOB
-        $("#dob").bind('input propertychange', function() {
-            var date = new Date();
-            var year = date.getFullYear();
-            // var date_dob = new Date($("#dob")).val();
-            // var year_dob = date_dob.getFullYear();
-            var str = $("#dob").val();
-
-            if (str == "") {
-                $("#dob").css("border-color", "red");
-                $('#dobErr').text('Please Enter Date Of Birth ');
-            } else {
-                $("#dob").css("border-color", "");
-                $("#dobErr").text('');
-            }
-        });
+        
         // Email
         $("#email").bind('input propertychange', function() {
             var str = $("#email").val();
@@ -222,6 +207,7 @@ $(document).ready(function() {
                 $('#majorsErr').text('Please Enter Correct Subject');
             } else {
                 $("#majors").css("border-color", "");
+                $('#majorsErr').text('');
             }
         });
 
@@ -695,6 +681,7 @@ $(document).ready(function() {
             }
         });
     }
+
     // nextPI
     $("#fs_PI").on('click', "#nextPI", function() {
         // alert('working??');
@@ -752,7 +739,7 @@ $(document).ready(function() {
         // title
 
         var str_title = $("#title").val();
-        if (str_title == "Mr." || str_title == "Mrs." || str_title == "Dr." || str_title == "Engr." || str_title == "Miss") {
+        if (str_title == "Mr." || str_title == "Mrs." || str_title == "Dr." || str_title == "Engr." || str_title == "Ms.") {
             $("#title").css("border-color", "");
             $("#titleErr").text('');
             check = 1;
@@ -1653,12 +1640,134 @@ $(document).ready(function() {
         // }
 
         // alert("working");
-        $("#submit").show();
+        // $("#submit").show();
 
     });
 
-    $("#prevQI").on('click', function() {
-        $("#submit").hide();
+    // questions
+    $("#fs_q").on('click', "#nextQ", function() {
+        // alert('working??');
+        //comp_know
+        var check = 0;
+        var str_comp_know = $("#comp_know").val();
+        if (str_comp_know == "") {
+            $("#comp_know").css("border-color", "red");
+            $('#comp_knowErr').text('Please select one option');
+
+            $('.current').removeClass('current').hide().prev().show().addClass('current');
+            $('#progressbar li.active').removeClass('active').prev().addClass('active');
+            $("#comp_know").focus();
+            return false;
+
+        } else {
+            $("#comp_know").css("border-color", "");
+            $('#comp_knowErr').text('');
+            check = 1;
+        }
+
+        // net_access
+        var strnet_access = $("#net_access").val();
+
+        if (strnet_access == "") {
+
+            $("#net_access").css("border-color", "red");
+            $('#net_accessErr').text('Please select one option');
+
+            $('.current').removeClass('current').hide().prev().show().addClass('current');
+            $('#progressbar li.active').removeClass('active').prev().addClass('active');
+            $("#net_access").focus();
+            return false;
+        } else {
+            $("#net_access").css("border-color", "");
+            $("#net_accessErr").text('');
+        }
+
+
+        // home_comp
+
+        var str_home_comp = $("#home_comp").val();
+        if (str_home_comp == "") {
+            $("#home_comp").css("border-color", "red");
+            $('#home_compErr').text('Please select one option');
+
+            $('.current').removeClass('current').hide().prev().show().addClass('current');
+            $('#progressbar li.active').removeClass('active').prev().addClass('active');
+            $("#home_comp").focus();
+            return false;
+            check = 1;
+        } else {
+            $("#home_comp").css("border-color", "");
+            $("#home_compErr").text('');
+        }
+
+
+
+        // jobTitle
+
+        var strjobTitle = $("#jobTitle").val();
+        if (strjobTitle == "") {
+            $("#jobTitle").css("border-color", "red");
+            $('#jobTitleErr').text('Please select job title');
+
+            $('.current').removeClass('current').hide().prev().show().addClass('current');
+            $('#progressbar li.active').removeClass('active').prev().addClass('active');
+            $("#jobTitle").focus();
+            return false;
+        } else {
+            $("#jobTitle").css("border-color", "");
+            $("#jobTitleErr").text('');
+            check = 1;
+
+        }
+
+        // sindhi_reading
+        var str_sindhi_reading = $("#sindhi_reading").val();
+        if (str_sindhi_reading == "") {
+            $("#sindhi_reading").css("border-color", "red");
+            $('#sindhi_readingErr').text('Please select one option');
+
+            $('.current').removeClass('current').hide().prev().show().addClass('current');
+            $('#progressbar li.active').removeClass('active').prev().addClass('active');
+            $("#sindhi_reading").focus();
+            return false;
+        } else {
+            $("#sindhi_reading").css("border-color", "");
+            $("#sindhi_readingErr").text('');
+            check = 1;
+        }
+
+        // sindhi_writing
+        var str_sindhi_writing = $("#sindhi_writing").val();
+        if (str_sindhi_writing == "") {
+            $("#sindhi_writing").css("border-color", "red");
+            $('#sindhi_writingErr').text('Please select one option');
+
+            $('.current').removeClass('current').hide().prev().show().addClass('current');
+            $('#progressbar li.active').removeClass('active').prev().addClass('active');
+            $("#sindhi_writing").focus();
+            return false;
+        } else {
+            $("#sindhi_writing").css("border-color", "");
+            $("#sindhi_writingErr").text('');
+            check = 1;
+        }
+
+        // sindhi_speaking
+        var str_sindhi_speaking = $("#sindhi_speaking").val();
+        if (str_sindhi_speaking == "") {
+            $("#sindhi_speaking").css("border-color", "red");
+            $('#sindhi_speakingErr').text('Please select one option');
+
+            $('.current').removeClass('current').hide().prev().show().addClass('current');
+            $('#progressbar li.active').removeClass('active').prev().addClass('active');
+            $("#sindhi_speaking").focus();
+            return false;
+        } else {
+            $("#sindhi_speaking").css("border-color", "");
+            $("#sindhi_speakingErr").text('');
+            check = 1;
+        }
+
     });
 
     // computer Knowledge

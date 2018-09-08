@@ -1,6 +1,6 @@
  <fieldset class="field4" id="fs_EI">
             <!-- Current Job -->
-        <legend>Current Job</legend>
+        <legend>Employment Status</legend>
         <!-- employment question -->
         <div class="form-group row">
             <label class="col-md control-label" for="jobquestion">Are you Currently Working?</label>
@@ -11,7 +11,7 @@
                     <label class="col-md" for="employed">Employed?</label>
                 </label>
                 <label class="radio-inline" for="radios-1">
-                    <input class="col-md" id="unemployed" type="radio" name="employmentradios" value="UnEmployed" required="">
+                    <input class="col-md" id="unemployed" type="radio" name="employmentradios" value="UnEmployed" required="" checked>
                     <label class="col-md" for="unemployed">Unemployed?</label>
                 </label>
                 <label class="col-md control-label" id="employmentErr" name="employmentErr" style="color: red; font-weight: bold;"></label>
@@ -45,7 +45,7 @@
             </div>
             <!-- Company Name -->
             <div class="form-group row">
-                <label class="col-md control-label" for="companyName">Company Name</label>
+                <label class="col-md control-label" for="companyName">Company/Institution/Employer Name</label>
                 <div class="col-md">
                     <div class="row">
                         <input class="form-control input-md col-md" type="text" id="companyName" name="companyName" placeholder="Company Name">
@@ -58,7 +58,7 @@
             <?php require_once 'includes/joblocation.php'; ?>
             <br>
             <div class="form-group row">
-                <label class="col-md control-label" for="jobaddress">Company's Address</label>
+                <label class="col-md control-label" for="jobaddress">Company/Institution/Employer's Address</label>
                 <div class="col-md">
                     <div class="row">
                         <textarea class="form-control input-md col-md" id="jobaddress" name="jobaddress" placeholder="Address"></textarea>
@@ -141,19 +141,6 @@
             
             
         <hr>
-            <br>
-            <!-- Invigilation Experiance -->
-            <?php require_once 'sections/invigilatingExperience.php'; ?>
-            <!-- Teaching Experiance -->
-            <?php require_once 'sections/teachingExperience.php'; ?>
-            
-            <!-- subject of Interest -->
-            <?php require_once 'sections/te_subjectofinterest.php'; ?>
-            <hr>
-            <!-- Marking Experiance -->
-            <?php require_once 'sections/markingexperience.php'; ?>
-            <!-- marking Interest -->
-            <?php require_once 'sections/markinginterestsubject.php'; ?>
             
             <div class="form-group row">
                 <label class="control-label col-md"></label>

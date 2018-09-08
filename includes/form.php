@@ -5,7 +5,7 @@ include 'test.php';
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+  die("Connection failed: " . mysqli_connect_error());
 }
 
 $f_Name = $_POST['firstName'];
@@ -18,6 +18,8 @@ $f_hmiddleName = $_POST['f_hmiddleName'];
 $f_hlastName = $_POST['f_hlastName'];
 $CNIC = $_POST['cnic'];
 $DOB = $_POST['dob'];
+$nationality = $_POST['nationality'];
+$religion = $_POST['religion'];
 // $picture = $_POST['picUploader'];
 $Email = $_POST['email'];
 $Mobile = $_POST['mobno'];
@@ -67,6 +69,9 @@ $CompKnowledge = $_POST['comp_know'];
 $NetAccess = $_POST['net_access'];
 $home_comp = $_POST['home_comp'];
 $jobTitle = $_POST['jobTitle'];
+$sindhi_reading = $_POST['sindhi_reading'];
+$sindhi_writing = $_POST['sindhi_writing'];
+$sindhi_speaking = $_POST['sindhi_speaking'];
 
 $picUploader="";
 $degreeUploader="";
@@ -184,8 +189,8 @@ if ($uploadOk == 0) {
 // echo "<br> NetAccess: " . $NetAccess;
 // exit();
 
-$picture = "../assets/uploads/Pictures/" . $picUploader;
-$degree = "../assets/uploads/AcademicDocuments/" . $degreeUploader;
+$picture = "../assets/uploads/Pictures/" . $CNIC;
+$degree = "../assets/uploads/AcademicDocuments/" . $CNIC;
 
 // Change the line below to your timezone!
 date_default_timezone_set(date_default_timezone_get());
@@ -196,7 +201,7 @@ $status=false;
 // $passing_yr=2017;
 // $WorkingSince=2015;
 $IsPDF=0;
- $sql="INSERT INTO `tbl_applicant`(`FirstName`, `MiddleName`, `LastName`, `Title`, `Gender`, `FH_FirstName`, `FH_MiddleName`, `FH_LastName`, `CNIC`, `DOB`, `Email`, `Mobile`, `Landline`, `EmergencyMobile`, `Province`, `Division`, `District`, `Tehsil`, `Address`, `Academic_DegreeLevel`, `Academic_Majors`, `Academic_YP`, `Academic_PakOrAbroad`, `PakistanUni`, `AbroadCountry`, `AbroadCity`, `AbroadUni`, `Academic_TM`, `Academic_OM`, `ProfQual_Title`, `ProfQual_DegOther`, `ProfQual_YP`, `ProfQual_Inst`, `IsCurrentlyWorking`, `Designation`, `JobDesc`, `CompanyName`, `JobProvince`, `JobDivision`, `JobDistrict`, `JobTehsil`, `CompanyAddress`, `RelatedTeaching`, `RelatedMarking`, `RelatedInvig`, `IsGovt`, `WorkingSince`, `InvigExp_Level`, `ComputerKnowledge`, `InternetAccess`, `CompAtHome`, `PostAppliedFor`, `EnteredAt`, `IsPDF`, `Picture`, `DegreeUpload`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"; 
+$sql="INSERT INTO `tbl_applicant`(`FirstName`, `MiddleName`, `LastName`, `Title`, `Gender`, `FH_FirstName`, `FH_MiddleName`, `FH_LastName`, `CNIC`, `DOB`, `nationality`, `religion`, `Email`, `Mobile`, `Landline`, `EmergencyMobile`, `Province`, `Division`, `District`, `Tehsil`, `Address`, `Academic_DegreeLevel`, `Academic_Majors`, `Academic_YP`, `Academic_PakOrAbroad`, `PakistanUni`, `AbroadCountry`, `AbroadCity`, `AbroadUni`, `Academic_TM`, `Academic_OM`, `ProfQual_Title`, `ProfQual_DegOther`, `ProfQual_YP`, `ProfQual_Inst`, `IsCurrentlyWorking`, `Designation`, `JobDesc`, `CompanyName`, `JobProvince`, `JobDivision`, `JobDistrict`, `JobTehsil`, `CompanyAddress`, `RelatedTeaching`, `RelatedMarking`, `RelatedInvig`, `IsGovt`, `WorkingSince`, `InvigExp_Level`, `ComputerKnowledge`, `InternetAccess`, `CompAtHome`, `PostAppliedFor`, `sindhi_reading`, `sindhi_writing`, `sindhi_speaking`, `EnteredAt`, `IsPDF`, `Picture`, `DegreeUpload`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"; 
 
 // echo "\n$sql";
 
@@ -206,7 +211,7 @@ if($stmt === false) {
   trigger_error('Wrong SQL: ' . $sql. ' Error: ' . $conn->error, E_USER_ERROR); 
 }
 
-$stmt->bind_param('ssssssssssssssssssssssssssssssssssssssssssssssssssssssss', $f_Name ,$M_Name ,$L_Name ,$Title ,$Gender ,$f_hfirstName ,$f_hmiddleName ,$f_hlastName ,$CNIC ,$DOB ,$Email ,$Mobile ,$PTCL ,$EmrgncyNo ,$Provice ,$Division ,$District ,$Tehsil ,$streetad ,$deglevel ,$Majors ,$Passing ,$std_uni   ,$pak_uni ,$Country ,$City ,$abroad_uni ,$MaxNo ,$Obtain_no,$teachingdeg ,$otherdeg ,$passing_yr ,$awarding_bdy ,$employment1 ,$Designation ,$Description ,$CompanyName ,$JobProvince ,$JobDivision ,$JobDistrict ,$JobTehsil ,$CompanyAddress ,$TeachingJob ,$MarkingJob ,$InvigilatingJob ,$GovJob ,$WorkingSince ,$InvigExperienceLevel ,$CompKnowledge ,$NetAccess, $home_comp, $jobTitle, $date ,$IsPDF, $picture, $degree);
+$stmt->bind_param('sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', $f_Name ,$M_Name ,$L_Name ,$Title ,$Gender ,$f_hfirstName ,$f_hmiddleName ,$f_hlastName ,$CNIC ,$DOB, $nationality, $religion ,$Email ,$Mobile ,$PTCL ,$EmrgncyNo ,$Provice ,$Division ,$District ,$Tehsil ,$streetad ,$deglevel ,$Majors ,$Passing ,$std_uni   ,$pak_uni ,$Country ,$City ,$abroad_uni ,$MaxNo ,$Obtain_no,$teachingdeg ,$otherdeg ,$passing_yr ,$awarding_bdy ,$employment1 ,$Designation ,$Description ,$CompanyName ,$JobProvince ,$JobDivision ,$JobDistrict ,$JobTehsil ,$CompanyAddress ,$TeachingJob ,$MarkingJob ,$InvigilatingJob ,$GovJob ,$WorkingSince ,$InvigExperienceLevel ,$CompKnowledge ,$NetAccess, $home_comp, $jobTitle, $sindhi_reading, $sindhi_writing, $sindhi_speaking, $date ,$IsPDF, $picture, $degree);
 
 if($stmt->execute()){
   $status=true;
@@ -218,11 +223,11 @@ else{
 
 $stmt->close();
 
-$status1=false;
-$status2=false;
-$status3=false;
-$status4=false;
-$status5=false;
+$status1=true;
+$status2=true;
+$status3=true;
+$status4=true;
+$status5=true;
 
 $sql = "SELECT max(AppID) as mAppID FROM tbl_Applicant";
 $result = $conn->query($sql);
@@ -241,29 +246,33 @@ if ($result->num_rows > 0) {
       $texpArr = explode("|", $teachingExperienceArr[$i]);
       // echo "<br>texp array: ".$teachingExperienceArr[$i];
       // echo "texp array 1: ".sizeof($texpArr);
-      $texpLevel = $texpArr[0];
-      $texpFrom = $texpArr[1];
-      $texpTo = $texpArr[2];
+      
+      if(sizeof($teachingExperienceArr[$i])==3){
 
-      $sql="INSERT INTO `tbl_teachingexperience` (`AppID`, `ExpID`, `LevelTaught`, `From`, `To`) VALUES (?,?,?,?,?)";
+        $texpLevel = $texpArr[0];
+        $texpFrom = $texpArr[1];
+        $texpTo = $texpArr[2];
 
-      $stmt = $conn->prepare($sql);
+        $sql="INSERT INTO `tbl_teachingexperience` (`AppID`, `ExpID`, `LevelTaught`, `From`, `To`) VALUES (?,?,?,?,?)";
 
-      if($stmt === false) { 
-        trigger_error('Wrong SQL: ' . $sql. ' Error: ' . $conn->error, E_USER_ERROR); 
+        $stmt = $conn->prepare($sql);
+
+        if($stmt === false) { 
+          trigger_error('Wrong SQL: ' . $sql. ' Error: ' . $conn->error, E_USER_ERROR); 
+        }
+
+        $stmt->bind_param('sssss', $row["mAppID"], $i, $texpLevel, $texpFrom, $texpTo);
+
+        if($stmt->execute()){
+          $status1=true;
+        }
+        else{
+          echo "<br>tableData errr: ".$stmt->error;
+          $status1=false;
+        }
+
+        $stmt->close();
       }
-
-      $stmt->bind_param('sssss', $row["mAppID"], $i, $texpLevel, $texpFrom, $texpTo);
-
-      if($stmt->execute()){
-        $status1=true;
-      }
-      else{
-        echo "<br>tableData errr: ".$stmt->error;
-        $status1=false;
-      }
-
-      $stmt->close();
 
     }
 
@@ -272,29 +281,33 @@ if ($result->num_rows > 0) {
     $markingExperienceArr = explode("\n", $markingExperience);
     for ($i=1; $i < sizeof($markingExperienceArr); $i++) {
       $mexpArr = explode("|", $markingExperienceArr[$i]);
-      $mexpLevel = $mexpArr[0];
-      $mexpFrom = $mexpArr[1];
-      $mexpTo = $mexpArr[2];
+      
+      if(sizeof($markingExperienceArr[$i])==3){
 
-      $sql="INSERT INTO `tbl_markingexperience`(`AppID`, `ExpID`, `LevelMarked`, `From`, `To`) VALUES (?,?,?,?,?)";
+        $mexpLevel = $mexpArr[0];
+        $mexpFrom = $mexpArr[1];
+        $mexpTo = $mexpArr[2];
 
-      $stmt = $conn->prepare($sql);
+        $sql="INSERT INTO `tbl_markingexperience`(`AppID`, `ExpID`, `LevelMarked`, `From`, `To`) VALUES (?,?,?,?,?)";
 
-      if($stmt === false) { 
-        trigger_error('Wrong SQL: ' . $sql. ' Error: ' . $conn->error, E_USER_ERROR); 
+        $stmt = $conn->prepare($sql);
+
+        if($stmt === false) { 
+          trigger_error('Wrong SQL: ' . $sql. ' Error: ' . $conn->error, E_USER_ERROR); 
+        }
+
+        $stmt->bind_param('sssss', $row["mAppID"], $i, $texpLevel, $texpFrom, $texpTo);
+
+        if($stmt->execute()){
+          $status2=true;
+        }
+        else{
+          echo "<br>markingtableData errr: ".$stmt->error;
+          $status2=false;
+        }
+
+        $stmt->close();
       }
-
-      $stmt->bind_param('sssss', $row["mAppID"], $i, $texpLevel, $texpFrom, $texpTo);
-
-      if($stmt->execute()){
-        $status2=true;
-      }
-      else{
-        echo "<br>markingtableData errr: ".$stmt->error;
-        $status2=false;
-      }
-
-      $stmt->close();
 
     }
 
@@ -303,29 +316,32 @@ if ($result->num_rows > 0) {
     $invigExperienceArr = explode("\n", $invigExperience);
     for ($i=1; $i < sizeof($invigExperienceArr); $i++) {
       $iexpArr = explode("|", $invigExperienceArr[$i]);
-      $iexpLevel = $iexpArr[0];
-      $iexpFrom = $iexpArr[1];
-      $iexpTo = $iexpArr[2];
+      
+      if(sizeof($invigExperienceArr[$i])==3){
+        $iexpLevel = $iexpArr[0];
+        $iexpFrom = $iexpArr[1];
+        $iexpTo = $iexpArr[2];
 
-      $sql="INSERT INTO `tbl_invigexperience`(`AppID`, `ExpID`, `LevelMarked`, `From`, `To`) VALUES (?,?,?,?,?)";
+        $sql="INSERT INTO `tbl_invigexperience`(`AppID`, `ExpID`, `LevelMarked`, `From`, `To`) VALUES (?,?,?,?,?)";
 
-      $stmt = $conn->prepare($sql);
+        $stmt = $conn->prepare($sql);
 
-      if($stmt === false) { 
-        trigger_error('Wrong SQL: ' . $sql. ' Error: ' . $conn->error, E_USER_ERROR); 
+        if($stmt === false) { 
+          trigger_error('Wrong SQL: ' . $sql. ' Error: ' . $conn->error, E_USER_ERROR); 
+        }
+
+        $stmt->bind_param('sssss', $row["mAppID"], $i, $texpLevel, $texpFrom, $texpTo);
+
+        if($stmt->execute()){
+          $status5=true;
+        }
+        else{
+          echo "<br>invig_tableData errr: ".$stmt->error;
+          $status5=false;
+        }
+
+        $stmt->close();
       }
-
-      $stmt->bind_param('sssss', $row["mAppID"], $i, $texpLevel, $texpFrom, $texpTo);
-
-      if($stmt->execute()){
-        $status5=true;
-      }
-      else{
-        echo "<br>invig_tableData errr: ".$stmt->error;
-        $status5=false;
-      }
-
-      $stmt->close();
 
     }
 
@@ -389,16 +405,20 @@ if ($result->num_rows > 0) {
   echo "0 results";
 }
 
-if($status && $status1 && $status2 && $status3 && $status4){
-  require_once 'test.php';
+if($status && $status1 && $status2 && $status3 && $status4 && $status5){
+  // require_once 'test.php';
   echo '<br>success';
   $_SESSION['saveStatus']="success";
   header("Location: ../index.php");
 }
-if(!$status || !$status1 || !$status2 || !$status3 || !$status4){
+if(!$status || !$status1 || !$status2 || !$status3 || !$status4 || !$status5){
+  echo "<br>$status1";
+  echo "<br>$status2";
+  echo "<br>$status3";
+  echo "<br>$status4";
   echo '<br>failed';
   $_SESSION['saveStatus']="failure";
-  header("Location: ../index.php");
+  // header("Location: ../index.php");
 }
 
 

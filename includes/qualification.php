@@ -21,13 +21,12 @@ if (!$connU) {
     // </script>
     // ";
 } ?>
-
 <fieldset class="field3" id="fs_Edu0">
     <legend>Highest Academic Qualification</legend>
     <br>
     <!-- Degree Level -->
     <div class="from-group row">
-        <label class="col-md control-label" for="degreelevel">Degree Level</label>
+        <label class="col-md control-label" for="degreelevel">Title of Degree/Certificate</label>
         <div class="col-md">
             <div class="row">
                 <select id="degreelevel" class="form-control col-md" name="degreelevel" required>
@@ -67,7 +66,7 @@ if (!$connU) {
     <br>
     <!-- Degree from pak or abroad -->
     <div class="form-group row">
-        <label class="col-md control-label" for="Universities">Degree done from Pakistan or Abraod</label>
+        <label class="col-md control-label" for="Universities">Degree done from Pakistan or Abroad</label>
         <div class="col-md" id="Universities">
             <div class="row">
                 <label class="radio-inline" for="radios-0">
@@ -86,7 +85,7 @@ if (!$connU) {
     <!-- Pakistani Universities -->
     <section id="pakiUni">
         <div class="form-group row">
-            <label class="col-md control-label" for="pakistanUni">Uninersities</label>
+            <label class="col-md control-label" for="pakistanUni">Universities</label>
             <div class="col-md">
                 <div class="row">
                     <select class="form-control col-md selectpicker" name="pakistanUni" id="pakistanUni" data-live-search="true">
@@ -104,10 +103,10 @@ if (!$connU) {
                           while($rowu = $resultu->fetch_assoc()) {
                               echo "Province: " . $rowu["University"]. "<br>";
                               ?>
-                              <option value="<?= $rowu["University"] ?>">
-                                <?= $rowu["University"]?>
-                            </option>
-                            <?php 
+                        <option value="<?= $rowu[" University "] ?>">
+                            <?= $rowu["University"]?>
+                        </option>
+                        <?php 
                         }
                     } else { ?>
                         <?php 
@@ -115,156 +114,159 @@ if (!$connU) {
                     }
                     $connU->close(); 
                     ?>
-                </select>
-                <label class="col-md control-label" id="pakistanUniErr" name="pakistanUniErr" style="color: red; font-weight: bold;"></label>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Abroad Universities -->
-<section id="abroadUni">
-    <div class="form-group row">
-        <label class="col-md control-label" for="country">Country</label>
-        <div class="col-md">
-            <div class="row">
-                <input class="form-control input-md col-md" name="country" placeholder="Country"></input>
-                <label class="col-md control-label" id="countryErr" name="countryErr" style="color: red; font-weight: bold;"></label>
-            </div>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-md control-label" for="city">City</label>
-        <div class="col-md">
-            <div class="row">
-                <input class="form-control input-md col-md" name="city" placeholder="City"></input>
-                <label class="col-md control-label" id="cityErr" name="cityErr" style="color: red; font-weight: bold;"></label>
-            </div>
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-md control-label" for="university">University</label>
-        <div class="col-md">
-            <div class="row">
-                <input class="form-control input-md col-md" name="university" placeholder="universiry"></input>
-                <label class="col-md control-label" id="universityErr" name="universityErr" style="color: red; font-weight: bold;"></label>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Max Nmbrs -->
-<div class="form-group row">
-    <label class="col-md control-label" for="maxno">Total Marks/ Maximum CGPA</label>
-    <div class="col-md">
-        <div class="row">
-            <input type="text" name="maxno" id="maxno" class="col-md form-control input-md" placeholder="Total Marks/ Max. CGPA" required>
-            <label class="col-md control-label" id="maxnoErr" name="maxnoErr" style="color: red; font-weight: bold;"></label>
-        </div>
-    </div>
-</div>
-<br>
-<!-- Marks Obtain -->
-<div class="form-group row">
-    <label class="col-md control-label" for="marksObtain">Obtained Marks/ Maximum CGPA</label>
-    <div class="col-md">
-        <div class="row">
-            <input type="text" name="marksObtain" id="obtno" class="col-md form-control input-md" placeholder="Marks Obtained/Obtained CGPA" required>
-            <label class="col-md control-label" id="obtnoErr" name="obtnoErr" style="color: red; font-weight: bold;"></label>
-        </div>
-    </div>
-</div>
-<br>
-<!-- Degree uploader -->
-<div class="form-group row">
-    <label class="col-md control-label" for="degreeUploader">Degree Upload</label>
-    <div class="col-md">
-        <div class="row">
-            <input id="degreeUploader" name="degreeUploader" class="col-md input-file" type="file" accept="image/*">
-            <label class="col-md control-label" id="degreeUploaderErr" name="degreeUploaderErr" style="color: red; font-weight: bold;"></label>
-        </div>
-    </div>
-</div>
-<!-- Professional Qualification -->
-<legend>Professional Qualification</legend>
-<br>
-<!-- Degree from pak or abroad -->
-<div class="form-group row">
-    <label class="col-md control-label" for="proff_q">Do you have Profrssional Qualification</label>
-    <div class="col-md" id="proff_q">
-        <div class="row">
-            <label class="radio-inline" for="Yes">
-                <input type="radio" name="proff_q" id="yes" value="Yes">
-                <label class="col-md">Yes</label>
-            </label>
-            <label class="radio-inline" for="no">
-                <input type="radio" name="proff_q" id="no" value="No">
-                <label class="col-md">No</label>
-            </label>
-            <label class="control-label col-md" id="proffErr" style="color: red; font-weight: bold;"></label>
-        </div>
-    </div>
-</div>
-<br>
-<!-- title of Qualification -->
-<section id="proff_degree">
-    <div class="form-group row">
-        <label class=" col-md control-label" for="teachingdegree">Title Of Degree</label>
-        <div class="col-md">
-            <div class="row">
-                <select class="form-control col-md" name="teachingdegree" id="teachingdegree" onchange="otherdeg();">
-                    <option selected value="">Select</option>
-                    <option value="M.Ed">M.Ed</option>
-                    <option value="B.Ed">B.Ed</option>
-                    <option value="CT">CT</option>
-                    <option value="Other">Other</option>
-                </select>
-                <label class="col-md control-label" id="teachingdegreeErr" name="teachingdegreeErr" style="color: red; font-weight: bold;"></label>
-            </div>
-        </div>
-    </div>
-    <!-- other -->
-    <section id="otherdegree">
-        <div class="form-group row">
-            <label class="col-md control-label" for="otherdegreeI">Degree Name</label>
-            <div class="col-md">
-                <div class="row">
-                    <input class="form-control input-md col-md" type="text" name="otherdegree" id="otherdegreeI">
-                    <label class="col-md control-label" id="otherdegreeErr" name="otherdegreeErr" style="color: red; font-weight: bold;"></label>
+                    </select>
+                    <label class="col-md control-label" id="pakistanUniErr" name="pakistanUniErr" style="color: red; font-weight: bold;"></label>
                 </div>
             </div>
         </div>
     </section>
-    <!-- year of award -->
+    <!-- Abroad Universities -->
+    <section id="abroadUni">
+        <div class="form-group row">
+            <label class="col-md control-label" for="country">Country</label>
+            <div class="col-md">
+                <div class="row">
+                    <select class="form-control input-md col-md selectpicker" name="country" id="country" data-live-search="true"></select>
+                    <label class="col-md control-label" id="countryErr" name="countryErr" style="color: red; font-weight: bold;"></label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md control-label" for="city">City</label>
+            <div class="col-md">
+                <div class="row">
+                    <input class="form-control input-md col-md" name="city" placeholder="City"></input>
+                    <label class="col-md control-label" id="cityErr" name="cityErr" style="color: red; font-weight: bold;"></label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md control-label" for="university">University</label>
+            <div class="col-md">
+                <div class="row">
+                    <input class="form-control input-md col-md" name="university" placeholder="universiry"></input>
+                    <label class="col-md control-label" id="universityErr" name="universityErr" style="color: red; font-weight: bold;"></label>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Max Nmbrs -->
     <div class="form-group row">
-        <label class="col-md control-label" for="passingyear">Year of Passing</label>
+        <label class="col-md control-label" for="maxno">Total Marks/ Total CGPA</label>
         <div class="col-md">
             <div class="row">
-                <input class="form-control input-md col-md" id="passingyear" type="text" name="passingyear" onkeypress="return false">
-                <label class="col-md control-label" id="passingyearErr" name="passingyearErr" style="color: red; font-weight: bold;"></label>
+                <input type="text" name="maxno" id="maxno" class="col-md form-control input-md" placeholder="Total Marks/ Total CGPA" required>
+                <label class="col-md control-label" id="maxnoErr" name="maxnoErr" style="color: red; font-weight: bold;"></label>
             </div>
         </div>
     </div>
-    <!-- awarding Body -->
+    <br>
+    <!-- Marks Obtain -->
     <div class="form-group row">
-        <label class="col-md control-label" for="awardingbody">Board/University</label>
+        <label class="col-md control-label" for="marksObtain">Obtained Marks/ Obtained CGPA</label>
         <div class="col-md">
             <div class="row">
-                <input class="col-md form-control input-md" id="awardingbody" type="text" name="awardingbody">
-                <label class="col-md control-label" id="awardingbodyErr" name="awardingbodyErr" style="color: red; font-weight: bold;"></label>
+                <input type="text" name="marksObtain" id="obtno" class="col-md form-control input-md" placeholder="Marks Obtained/Obtained CGPA" required>
+                <label class="col-md control-label" id="obtnoErr" name="obtnoErr" style="color: red; font-weight: bold;"></label>
             </div>
         </div>
     </div>
-</section>
-<div class="form-group row">
-    <label class="col-md control-label" for="awardingbody"></label>
-    <div class="col-md">
-        <div class="row">
+    <br>
+    <!-- Degree uploader -->
+    <div class="form-group row">
+        <label class="col-md control-label" for="degreeUploader">Degree Upload (Degree must be in PNG/JPG Format)</label>
+        <div class="col-md">
+            <div class="row">
+                <label for="picUploader" class="col-md control-label label-md">
+                    <input id="degreeUploader" name="degreeUploader" class="input-file" type="file" accept="image/*" >
+                </label>
+                <label class="col-md control-label" id="degreeUploaderErr" name="degreeUploaderErr" style="color: red; font-weight: bold;"></label>
+            </div>
         </div>
-        <br>
-        <!-- <button type="button" class="previous btn btn-outline-dark">Back</button> -->
-        <a class="hoverwhite previous btn btn-outline-dark" id="prevQ">Back</a>
-        <a class="hoverwhite next btn btn-outline-dark" id="nextQI">Next</a>
-        <!-- <button type="button" class="next btn btn-outline-dark" id="nextQI">Next -->
-        </button>
     </div>
-</div>
+    <!-- Professional Qualification -->
+    <legend>Professional Qualification</legend>
+    <br>
+    <!-- Degree from pak or abroad -->
+    <div class="form-group row">
+        <label class="col-md control-label" for="proff_q">Do you have Teaching related
+            <br> Professional degree or Certificate?</label>
+        <div class="col-md" id="proff_q">
+            <div class="row">
+                <label class="radio-inline" for="Yes">
+                    <input type="radio" name="proff_q" id="yes" value="Yes">
+                    <label class="col-md">Yes</label>
+                </label>
+                <label class="radio-inline" for="no">
+                    <input type="radio" name="proff_q" id="no" value="No">
+                    <label class="col-md">No</label>
+                </label>
+                <label class="control-label col-md" id="proffErr" style="color: red; font-weight: bold;"></label>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- title of Qualification -->
+    <section id="proff_degree">
+        <div class="form-group row">
+            <label class=" col-md control-label" for="teachingdegree">Title Of Degree/Certificate</label>
+            <div class="col-md">
+                <div class="row">
+                    <select class="form-control col-md" name="teachingdegree" id="teachingdegree" onchange="otherdeg();">
+                        <option selected value="">Select</option>
+                        <option value="M.Ed">M.Ed</option>
+                        <option value="B.Ed">B.Ed</option>
+                        <option value="CT">CT</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <label class="col-md control-label" id="teachingdegreeErr" name="teachingdegreeErr" style="color: red; font-weight: bold;"></label>
+                </div>
+            </div>
+        </div>
+        <!-- other -->
+        <section id="otherdegree">
+            <div class="form-group row">
+                <label class="col-md control-label" for="otherdegreeI">Title of Other Degree/Certification</label>
+                <div class="col-md">
+                    <div class="row">
+                        <input class="form-control input-md col-md" type="text" name="otherdegree" id="otherdegreeI">
+                        <label class="col-md control-label" id="otherdegreeErr" name="otherdegreeErr" style="color: red; font-weight: bold;"></label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- year of award -->
+        <div class="form-group row">
+            <label class="col-md control-label" for="passingyear">Year of Passing</label>
+            <div class="col-md">
+                <div class="row">
+                    <input class="form-control input-md col-md" id="passingyear" type="text" name="passingyear" onkeypress="return false">
+                    <label class="col-md control-label" id="passingyearErr" name="passingyearErr" style="color: red; font-weight: bold;"></label>
+                </div>
+            </div>
+        </div>
+        <!-- awarding Body -->
+        <div class="form-group row">
+            <label class="col-md control-label" for="awardingbody">Board/University/Institute/Awarding Body</label>
+            <div class="col-md">
+                <div class="row">
+                    <input class="col-md form-control input-md" id="awardingbody" type="text" name="awardingbody">
+                    <label class="col-md control-label" id="awardingbodyErr" name="awardingbodyErr" style="color: red; font-weight: bold;"></label>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="form-group row">
+        <label class="col-md control-label" for="awardingbody"></label>
+        <div class="col-md">
+            <div class="row">
+            </div>
+            <br>
+            <!-- <button type="button" class="previous btn btn-outline-dark">Back</button> -->
+            <a class="hoverwhite previous btn btn-outline-dark" id="prevQ">Back</a>
+            <a class="hoverwhite next btn btn-outline-dark" id="nextQ">Next</a>
+            <!-- <button type="button" class="next btn btn-outline-dark" id="nextQI">Next -->
+            </button>
+        </div>
+    </div>
 </fieldset>

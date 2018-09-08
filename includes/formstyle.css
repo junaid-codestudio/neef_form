@@ -54,9 +54,9 @@
 #progressbar li {
     list-style-type: none;
     text-transform: uppercase;
-    font-size: 15px;
-    font-weight: bold;
-    width: 20%;
+    font-size: 10px;
+    /*font-weight: bold;*/
+    width: 11%;
     float: left;
     position: relative;
 
@@ -120,3 +120,5 @@
     .hoverwhite:hover{
         color: white !important; 
     }
+
+

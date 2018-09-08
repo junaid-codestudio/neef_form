@@ -1,3 +1,6 @@
+
+</style>
+
 <fieldset class="field2" id="fs_CI">
         <!-- Contact Information -->
         <legend>Contact Details</legend>
@@ -28,11 +31,11 @@
         <br>
         <!-- Lind line -->
         <div class="form-group row">
-            <label class="col-md control-label" for="mobno">LandLine Number</label>
+            <label class="col-md control-label" for="ptcl">LandLine Number</label>
             <div class="col-md">
-                <div class="row">
-                    <input id="ptcl" name="ptcl" type="text" placeholder="LandLine Number" class="form-control input-md col-md input-medium bfh-phone" data-format="+92 (dd) ddd-dddd" value="">
-                <label class="col-md control-label" id="ptclErr" name="ptclErr" style="color: red; font-weight: bold;"></label>
+                <div class="row" style="margin-right: 260px;">
+                    <input id="ptcl" name="ptcl" type="text" placeholder="Landline Number" class="form-control input-md col-md input-medium" value="+92">
+                
                 </div>
             </div>
 

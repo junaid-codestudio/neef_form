@@ -51,7 +51,7 @@ if (!$conn1) {
             <label class="col-md control-label" for="jobdistrictErr" id="jobdistrictErr" name="jobdistrictErr" style="color: red; font-weight: bold;"></label>
         </div>
         <!-- Tehsil -->
-        <div class="row">Tehsil:<label class="col-md control-label"></label></div>
+        <div class="row">Tehsil/Taluqa:<label class="col-md control-label"></label></div>
         <div class="row">
             <select id="jobtehsil" class="form-control col-md" name="jobtehsil"></select>
             <label class="col-md control-label" for="jobtehsilErr" id="jobtehsilErr" name="jobtehsilErr" style="color: red; font-weight: bold;"></label>

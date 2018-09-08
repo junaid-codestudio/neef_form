@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 31, 2018 at 09:37 PM
+-- Generation Time: Sep 08, 2018 at 05:11 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -40,6 +40,8 @@ CREATE TABLE `tbl_applicant` (
   `FH_LastName` varchar(500) DEFAULT NULL,
   `CNIC` varchar(500) DEFAULT NULL,
   `DOB` date DEFAULT NULL,
+  `nationality` varchar(500) DEFAULT NULL,
+  `religion` varchar(500) DEFAULT NULL,
   `Email` varchar(500) DEFAULT NULL,
   `Mobile` varchar(500) DEFAULT NULL,
   `Landline` varchar(500) DEFAULT NULL,
@@ -53,67 +55,43 @@ CREATE TABLE `tbl_applicant` (
   `Academic_Majors` varchar(500) DEFAULT NULL,
   `Academic_YP` int(11) DEFAULT NULL,
   `Academic_PakOrAbroad` varchar(500) DEFAULT NULL,
-  `PakistanUni` varchar(500) NOT NULL,
-  `AbroadCountry` varchar(500) NOT NULL,
-  `AbroadCity` varchar(500) NOT NULL,
-  `AbroadUni` varchar(500) NOT NULL,
+  `PakistanUni` varchar(500) DEFAULT NULL,
+  `AbroadCountry` varchar(500) DEFAULT NULL,
+  `AbroadCity` varchar(500) DEFAULT NULL,
+  `AbroadUni` varchar(500) DEFAULT NULL,
   `Academic_TM` float DEFAULT NULL,
   `Academic_OM` float DEFAULT NULL,
   `ProfQual_Title` varchar(500) DEFAULT NULL,
-  `ProfQual_DegOther` varchar(500) NOT NULL,
+  `ProfQual_DegOther` varchar(500) DEFAULT NULL,
   `ProfQual_YP` int(11) DEFAULT NULL,
   `ProfQual_Inst` varchar(500) DEFAULT NULL,
   `IsCurrentlyWorking` varchar(500) DEFAULT NULL,
-  `Designation` varchar(500) NOT NULL,
-  `JobDesc` varchar(500) NOT NULL,
-  `CompanyName` varchar(500) NOT NULL,
-  `JobProvince` varchar(500) NOT NULL,
-  `JobDivision` varchar(500) NOT NULL,
-  `JobDistrict` varchar(500) NOT NULL,
-  `JobTehsil` varchar(500) NOT NULL,
-  `CompanyAddress` varchar(500) NOT NULL,
-  `RelatedTeaching` varchar(50) NOT NULL,
-  `RelatedMarking` varchar(50) NOT NULL,
-  `RelatedInvig` varchar(50) NOT NULL,
-  `IsGovt` varchar(50) NOT NULL,
-  `WorkingSince` int(11) NOT NULL,
+  `Designation` varchar(500) DEFAULT NULL,
+  `JobDesc` varchar(500) DEFAULT NULL,
+  `CompanyName` varchar(500) DEFAULT NULL,
+  `JobProvince` varchar(500) DEFAULT NULL,
+  `JobDivision` varchar(500) DEFAULT NULL,
+  `JobDistrict` varchar(500) DEFAULT NULL,
+  `JobTehsil` varchar(500) DEFAULT NULL,
+  `CompanyAddress` varchar(500) DEFAULT NULL,
+  `RelatedTeaching` varchar(50) DEFAULT NULL,
+  `RelatedMarking` varchar(50) DEFAULT NULL,
+  `RelatedInvig` varchar(50) DEFAULT NULL,
+  `IsGovt` varchar(50) DEFAULT NULL,
+  `WorkingSince` int(11) DEFAULT NULL,
   `InvigExp_Level` varchar(500) DEFAULT NULL,
-  `ComputerKnowledge` varchar(500) DEFAULT NULL,
-  `InternetAccess` varchar(500) DEFAULT NULL,
+  `ComputerKnowledge` varchar(500) NOT NULL,
+  `InternetAccess` varchar(500) NOT NULL,
   `CompAtHome` varchar(50) NOT NULL,
   `PostAppliedFor` varchar(500) NOT NULL,
-  `EnteredAt` datetime DEFAULT NULL,
+  `sindhi_reading` varchar(500) NOT NULL,
+  `sindhi_writing` varchar(500) NOT NULL,
+  `sindhi_speaking` varchar(500) NOT NULL,
+  `EnteredAt` datetime NOT NULL,
   `IsPDF` int(11) DEFAULT NULL,
   `Picture` text,
   `DegreeUpload` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_applicant`
---
-
-INSERT INTO `tbl_applicant` (`AppID`, `FirstName`, `MiddleName`, `LastName`, `Title`, `Gender`, `FH_FirstName`, `FH_MiddleName`, `FH_LastName`, `CNIC`, `DOB`, `Email`, `Mobile`, `Landline`, `EmergencyMobile`, `Province`, `Division`, `District`, `Tehsil`, `Address`, `Academic_DegreeLevel`, `Academic_Majors`, `Academic_YP`, `Academic_PakOrAbroad`, `PakistanUni`, `AbroadCountry`, `AbroadCity`, `AbroadUni`, `Academic_TM`, `Academic_OM`, `ProfQual_Title`, `ProfQual_DegOther`, `ProfQual_YP`, `ProfQual_Inst`, `IsCurrentlyWorking`, `Designation`, `JobDesc`, `CompanyName`, `JobProvince`, `JobDivision`, `JobDistrict`, `JobTehsil`, `CompanyAddress`, `RelatedTeaching`, `RelatedMarking`, `RelatedInvig`, `IsGovt`, `WorkingSince`, `InvigExp_Level`, `ComputerKnowledge`, `InternetAccess`, `CompAtHome`, `PostAppliedFor`, `EnteredAt`, `IsPDF`, `Picture`, `DegreeUpload`) VALUES
-(34, 'Sopoline', 'Erich Kirkland', 'Preston', 'Engr.', 'Female', 'Christine', 'Gannon Cunningham', 'Castaneda', '11111-1111111-1', '1983-10-28', 'zehygu@mailinator.com', '+92 (222) 222-2222', '+92 (33) 333-3333', '+92 (444) 444-4444', 'AZAD KASHMIR', 'MUZAFFARABAD', 'HATTIAN BALA', 'HATTIAN BALA', 'Reiciendis est similique facilis aute eos at minima nostrum explicabo Repudiandae nihil quaerat veniam eveniet eum nulla veniam cumque dolorem', 'Masters', 'Ea aut elit eveniet omnis praesentium tempora officia voluptatibus aliqua Quia est', 2016, 'Pakistan', '2', '', '', '', 0, 0, 'B.Ed', '', 2017, 'Voluptatem ex eaque sed placeat do et reprehenderit duis vel et dolorum dignissimos odio impedit', 'Employed', 'Fugit accusantium facilis cupidatat atque', 'Quos ex ullam laborum aut ipsa eius consequatur sint numquam velit a qui', 'Morales Farley Co', 'BALOCHISTAN', 'MEKRAN', 'KECH (AT TURBAT)', 'ZAMURAN SUB-TEHSIL', 'Ex sunt illum alias laudantium id', 'no', 'no', 'no', 'no', 2015, 'Becholars', 'no', 'no', '', '', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/', '../assets/uploads/AcademicDocuments/'),
-(35, 'Sopoline', 'Erich Kirkland', 'Preston', 'Engr.', 'Female', 'Christine', 'Gannon Cunningham', 'Castaneda', '11111-1111111-1', '1983-10-28', 'zehygu@mailinator.com', '+92 (222) 222-2222', '+92 (33) 333-3333', '+92 (444) 444-4444', 'AZAD KASHMIR', 'MUZAFFARABAD', 'HATTIAN BALA', 'HATTIAN BALA', 'Reiciendis est similique facilis aute eos at minima nostrum explicabo Repudiandae nihil quaerat veniam eveniet eum nulla veniam cumque dolorem', 'Masters', 'Ea aut elit eveniet omnis praesentium tempora officia voluptatibus aliqua Quia est', 2016, 'Pakistan', '2', '', '', '', 0, 0, 'B.Ed', '', 2017, 'Voluptatem ex eaque sed placeat do et reprehenderit duis vel et dolorum dignissimos odio impedit', 'Employed', 'Fugit accusantium facilis cupidatat atque', 'Quos ex ullam laborum aut ipsa eius consequatur sint numquam velit a qui', 'Morales Farley Co', 'BALOCHISTAN', 'MEKRAN', 'KECH (AT TURBAT)', 'ZAMURAN SUB-TEHSIL', 'Ex sunt illum alias laudantium id', 'no', 'no', 'no', 'no', 2015, 'Becholars', 'no', 'no', '', '', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/', '../assets/uploads/AcademicDocuments/'),
-(36, 'Aristotle', 'Summer Casey', 'Pate', 'Mrs.', 'Female', 'Chiquita', 'Jescie Vaughn', 'Bartlett', '11111-1111111-1', '2012-01-06', 'niwabaza@mailinator.net', '+92 (222) 222-2222', '+92 (33) 333-3333', '+92 (444) 444-4444', 'KHYBER PAKHTUNKHWA', 'D.I.KHAN', 'DERA ISMAIL KHAN', 'DARABAN', 'Duis voluptas quo quidem sit voluptas eos voluptatibus quas veniam dolore reiciendis ea et iusto maxime', 'Masters', 'Ut deserunt et adipisci et eiusmod aut occaecat est rerum et inventore', 2016, 'Pakistan', '6', '', '', '', 0, 0, 'B.Ed', '', 2017, 'Quis irure eu ratione cupidatat ullam totam tempore ea rem', 'Employed', 'Suscipit expedita velit voluptas ducimus praesentium non ullamco nostrum cupidatat pariatur Ad commodi exercitation vel dolore reprehenderit consectetur odit minim', 'Dolorem rerum ea aut exercitationem et dolorum itaque dolorum hic in ipsum harum duis quasi', 'Manning and Mcintosh Inc', 'FEDERAL', 'ISLAMABAD', 'ISLAMABAD', 'ISLAMABAD', 'Duis animi est id ullamco proident dolores officia', 'no', 'no', 'no', 'no', 2015, 'Middle', 'no', 'no', '', '', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/', '../assets/uploads/AcademicDocuments/'),
-(37, 'Adria', 'MacKenzie Langley', 'Bryant', 'Mrs.', 'Female', 'Desiree', 'Rana Blake', 'Hunter', '11111-1111111-1', '2011-04-26', 'vosapod@mailinator.net', '+92 (222) 222-2222', '+92 (33) 333-3333', '+92 (444) 444-4444', 'KHYBER PAKHTUNKHWA', 'D.I.KHAN', 'TANK', 'TANK', 'Dolorem sint repellendus Voluptatem veniam reprehenderit', 'Masters', 'Nisi et vero repudiandae quia nobis eos', 2016, 'Pakistan', '4', '', '', '', 0, 0, 'CT', '', 2017, 'Fugiat est neque sit ab omnis molestiae voluptatem et', 'UnEmployed', '', '', '', 'select', 'Select', 'Select', 'Select', '', 'yes', 'yes', 'yes', 'yes', 2015, 'Matric', 'no', 'no', '', '', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/logo.png', '../assets/uploads/AcademicDocuments/hereToHelp.jpeg'),
-(38, 'Lani', 'Echo Davidson', 'Gaines', 'Engr.', 'Transgender', 'Garth', 'Jermaine Camacho', 'Riggs', '61101-0128502-9', '1977-05-11', 'lesynug@mailinator.net', '+92 (033) 455-1991', '+92 (44) 444-4444', '+92 (555) 555-5555', 'BALOCHISTAN', 'MEKRAN', 'KECH (AT TURBAT)', 'TURBAT', 'Eius duis quisquam voluptatem rerum ut anim impedit earum unde numquam enim', 'Becholares 3 years', 'Rerum consequuntur quo necessitatibus quasi qui doloribus quod hic', 2016, 'Pakistan', '6', '', '', '', 0, 0, 'CT', '', 2017, 'Minima rerum est magna magna aut nisi sit reprehenderit modi', 'Employed', 'Ut alias aspernatur ut iusto odit eum', 'Et inventore voluptate voluptatem aliquid quaerat quo ratione est labore sit soluta eum enim dolore quia id deserunt eum', 'Patrick and Parks Trading', 'KHYBER', 'D.I.KHAN', 'TANK', 'TANK', 'Dolore sit in quia in enim eveniet qui', 'no', 'no', 'no', 'no', 2015, 'Becholars', 'no', 'no', '', '', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/particle_background.png', '../assets/uploads/AcademicDocuments/hereToHelp.jpeg'),
-(39, 'Drake', 'Kylan Joyce', 'Schultz', 'Engr.', 'Transgender', 'Carl', 'Camden Espinoza', 'Park', '22222-2222222-2', '2008-05-05', 'picenite@mailinator.com', '186', 'Recusandae Exercitationem elit sit consectetur id ex laboris anim repudiandae dolores corporis eiusmod quisquam qui nisi quo sed adipisicing', 'Est quis et nulla enim similique labore aliqua Dolorem ut quia ratione mollit est enim aliquip aliquid duis', 'F.A.T.A.', 'N/A', 'ORAKZAI (AT KALAYA)', 'CENTRAL', 'Sint quo fugit rerum sequi est vitae quis maiores asperiores', 'Masters', 'Eligendi ipsum vel id aut molestiae animi sequi dolore', 2016, 'Pakistan', '6', '', '', '', 0, 0, 'CT', '', 2017, 'Temporibus qui voluptatibus libero ut facere incididunt pariatur Sunt velit sit Nam laboriosam occaecat exercitation consequatur ipsum consequatur', 'Employed', 'Sit aute et id nulla nisi rem tempora mollit', 'Possimus labore et totam facilis ullamco perspiciatis excepturi quis sit', 'Spence Ramos Inc', 'PUNJAB', 'DERA GHAZI KHAN', 'LAYYAH', 'KAROR LAL ESAN', 'Reprehenderit quas voluptate sint hic itaque culpa sit beatae', 'no', 'no', 'no', 'no', 2015, 'Primary', 'no', 'no', '', '', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/particle_background.png', '../assets/uploads/AcademicDocuments/hereToHelp.jpeg'),
-(40, 'Kevyn', 'Fallon Carey', 'Conley', 'Dr.', 'Transgender', 'Naida', 'Gloria Marquez', 'Kramer', 'Qui dolores et duis voluptatum ad minima sit reprehenderit exercitationem sequi duis ut irure blanditiis', '2012-07-22', 'cobixamel@mailinator.com', '284', 'Quibusdam enim consequatur enim quas velit enim', 'Molestiae ipsum ut sunt quo ut voluptatum eu aut ipsa culpa minima aliquid autem enim autem', 'BALOCHISTAN', 'MEKRAN', 'KECH (AT TURBAT)', 'ZAMURAN SUB-TEHSIL', 'Dicta rerum velit aut debitis incididunt non aut rerum eiusmod earum in animi aut ipsa', 'Becholares 3 years', 'Totam dolore eos ea porro officiis quia tempor', 2016, 'Pakistan', '5', '', '', '', 0, 0, 'CT', '', 2017, 'Numquam delectus ullamco reiciendis id qui ullamco qui autem excepteur libero eveniet vel minus et eum necessitatibus qui consequat', 'UnEmployed', '', '', '', 'select', 'Select', 'Select', 'Select', '', 'yes', 'yes', 'yes', 'yes', 2015, 'Becholars', 'no', 'no', '', '', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/particle_background.png', '../assets/uploads/AcademicDocuments/hereToHelp.jpeg'),
-(41, 'Dacey', 'Lunea Hill', 'Frye', 'Mrs.', 'Transgender', 'Katell', 'Chase Patel', 'Harris', 'Et vel nihil sunt temporibus cupiditate corrupti itaque aut', '1999-03-27', 'lazudupiw@mailinator.com', '280', 'Ut magni ratione ut voluptatem non ut modi doloremque labore necessitatibus natus', 'Nostrud consectetur eiusmod dolore et sint dolore consequatur occaecat cupidatat excepturi in voluptatem sint quo quia', 'KHYBER PAKHTUNKHWA', 'D.I.KHAN', 'TANK', 'TANK', 'Nisi veniam laboriosam porro totam eum voluptatem culpa natus rerum in esse laudantium qui veniam qui', 'MS or MPhil', 'Labore nisi quia quo ad rem natus non minim error id officia neque', 2016, 'Abroad', '1', 'Dolor voluptas pariatur Ullam aut', 'Aperiam omnis dolores aperiam ullamco', 'Animi temporibus nobis tempore maxime esse qui voluptate dolorem autem perspiciatis omnis laboriosam aut est assumenda ipsum voluptatibus a', 0, 0, 'Other', 'asdasdasd', 2017, 'Nesciunt voluptate dicta et commodi', 'UnEmployed', '', '', '', 'select', 'Select', 'Select', 'Select', '', 'yes', 'yes', 'yes', 'yes', 2015, 'MS or MPhil', 'no', 'no', '', '', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/logo.png', '../assets/uploads/AcademicDocuments/hereToHelp.jpeg'),
-(42, 'Dacey', 'Lunea Hill', 'Frye', 'Mrs.', 'Transgender', 'Katell', 'Chase Patel', 'Harris', 'Et vel nihil sunt temporibus cupiditate corrupti itaque aut', '1999-03-27', 'lazudupiw@mailinator.com', '280', 'Ut magni ratione ut voluptatem non ut modi doloremque labore necessitatibus natus', 'Nostrud consectetur eiusmod dolore et sint dolore consequatur occaecat cupidatat excepturi in voluptatem sint quo quia', 'KHYBER PAKHTUNKHWA', 'D.I.KHAN', 'TANK', 'TANK', 'Nisi veniam laboriosam porro totam eum voluptatem culpa natus rerum in esse laudantium qui veniam qui', 'MS or MPhil', 'Labore nisi quia quo ad rem natus non minim error id officia neque', 2016, 'Abroad', '1', 'Dolor voluptas pariatur Ullam aut', 'Aperiam omnis dolores aperiam ullamco', 'Animi temporibus nobis tempore maxime esse qui voluptate dolorem autem perspiciatis omnis laboriosam aut est assumenda ipsum voluptatibus a', 0, 0, 'Other', 'asdasdasd', 2017, 'Nesciunt voluptate dicta et commodi', 'UnEmployed', '', '', '', 'select', 'Select', 'Select', 'Select', '', 'yes', 'yes', 'yes', 'yes', 2015, 'MS or MPhil', 'no', 'no', '', '', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/logo.png', '../assets/uploads/AcademicDocuments/hereToHelp.jpeg'),
-(43, 'Dacey', 'Lunea Hill', 'Frye', 'Mrs.', 'Transgender', 'Katell', 'Chase Patel', 'Harris', 'Et vel nihil sunt temporibus cupiditate corrupti itaque aut', '1999-03-27', 'lazudupiw@mailinator.com', '280', 'Ut magni ratione ut voluptatem non ut modi doloremque labore necessitatibus natus', 'Nostrud consectetur eiusmod dolore et sint dolore consequatur occaecat cupidatat excepturi in voluptatem sint quo quia', 'KHYBER PAKHTUNKHWA', 'D.I.KHAN', 'TANK', 'TANK', 'Nisi veniam laboriosam porro totam eum voluptatem culpa natus rerum in esse laudantium qui veniam qui', 'MS or MPhil', 'Labore nisi quia quo ad rem natus non minim error id officia neque', 2016, 'Abroad', '1', 'Dolor voluptas pariatur Ullam aut', 'Aperiam omnis dolores aperiam ullamco', 'Animi temporibus nobis tempore maxime esse qui voluptate dolorem autem perspiciatis omnis laboriosam aut est assumenda ipsum voluptatibus a', 0, 0, 'Other', 'asdasdasd', 2017, 'Nesciunt voluptate dicta et commodi', 'UnEmployed', '', '', '', 'select', 'Select', 'Select', 'Select', '', 'yes', 'yes', 'yes', 'yes', 2015, 'MS or MPhil', 'no', 'no', '', '', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/logo.png', '../assets/uploads/AcademicDocuments/hereToHelp.jpeg'),
-(44, 'Dacey', 'Lunea Hill', 'Frye', 'Mrs.', 'Transgender', 'Katell', 'Chase Patel', 'Harris', 'Et vel nihil sunt temporibus cupiditate corrupti itaque aut', '1999-03-27', 'lazudupiw@mailinator.com', '280', 'Ut magni ratione ut voluptatem non ut modi doloremque labore necessitatibus natus', 'Nostrud consectetur eiusmod dolore et sint dolore consequatur occaecat cupidatat excepturi in voluptatem sint quo quia', 'KHYBER PAKHTUNKHWA', 'D.I.KHAN', 'TANK', 'TANK', 'Nisi veniam laboriosam porro totam eum voluptatem culpa natus rerum in esse laudantium qui veniam qui', 'MS or MPhil', 'Labore nisi quia quo ad rem natus non minim error id officia neque', 2016, 'Abroad', '1', 'Dolor voluptas pariatur Ullam aut', 'Aperiam omnis dolores aperiam ullamco', 'Animi temporibus nobis tempore maxime esse qui voluptate dolorem autem perspiciatis omnis laboriosam aut est assumenda ipsum voluptatibus a', 0, 0, 'Other', 'asdasdasd', 2017, 'Nesciunt voluptate dicta et commodi', 'UnEmployed', '', '', '', 'select', 'Select', 'Select', 'Select', '', 'yes', 'yes', 'yes', 'yes', 2015, 'MS or MPhil', 'no', 'no', '', '', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/logo.png', '../assets/uploads/AcademicDocuments/hereToHelp.jpeg'),
-(45, 'Dacey', 'Lunea Hill', 'Frye', 'Mrs.', 'Transgender', 'Katell', 'Chase Patel', 'Harris', 'Et vel nihil sunt temporibus cupiditate corrupti itaque aut', '1999-03-27', 'lazudupiw@mailinator.com', '280', 'Ut magni ratione ut voluptatem non ut modi doloremque labore necessitatibus natus', 'Nostrud consectetur eiusmod dolore et sint dolore consequatur occaecat cupidatat excepturi in voluptatem sint quo quia', 'KHYBER PAKHTUNKHWA', 'D.I.KHAN', 'TANK', 'TANK', 'Nisi veniam laboriosam porro totam eum voluptatem culpa natus rerum in esse laudantium qui veniam qui', 'MS or MPhil', 'Labore nisi quia quo ad rem natus non minim error id officia neque', 2016, 'Abroad', '1', 'Dolor voluptas pariatur Ullam aut', 'Aperiam omnis dolores aperiam ullamco', 'Animi temporibus nobis tempore maxime esse qui voluptate dolorem autem perspiciatis omnis laboriosam aut est assumenda ipsum voluptatibus a', 0, 0, 'Other', 'asdasdasd', 2017, 'Nesciunt voluptate dicta et commodi', 'UnEmployed', '', '', '', 'select', 'Select', 'Select', 'Select', '', 'yes', 'yes', 'yes', 'yes', 2015, 'MS or MPhil', 'no', 'no', '', '', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/logo.png', '../assets/uploads/AcademicDocuments/hereToHelp.jpeg'),
-(46, 'MUHAMMAD', 'JUNAID', 'NAEEM', 'Select', 'Select', 'MUHAMMAD', 'JUNAID', 'NAEEM', '11111-1111111-1', '2002-06-24', 'mjunaidnaeem@gmail.com', '+92 (222) 222-2222', '+92 (33) 333-3333', '+92 (444) 444-4444', 'PUNJAB', 'DERA GHAZI KHAN', 'LAYYAH', 'KAROR LAL ESAN', 'House 865, Street 78, I-8/3', 'PhD', 'Vel sit in aute rerum cum voluptate et ad mollitia et in anim enim unde fuga Praesentium non', 2019, 'Pakistan', '1', '', '', '', 2.6, 1, 'Select', '', 2017, 'Sint molestias molestiae accusamus sint veniam', 'UnEmployed', '', '', '', 'select', 'Select', 'Select', 'Select', '', 'Select', 'Select', 'Select', 'Select', 0, 'Select', 'Select', 'Select', '', '', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/36774193_285635785318366_8221331887247851520_n.jpg', '../assets/uploads/AcademicDocuments/QadreeCollections_FBCover.png'),
-(47, 'Travis', 'Inga Jacobson', 'Robles', 'Miss', 'Male', 'Iola', 'Phoebe Roman', 'Burton', 'Aut nihil corrupti tenetur nostrum obcaecati beatae minim voluptas autem mollitia fugit sint', '1971-04-22', 'xojeg@mailinator.com', '+92 (582) 111-1111', 'Et officiis exercitation dolores omnis aut autem labore sapiente nulla nesciunt exercitation quibusdam', 'Nobis animi molestiae blanditiis inventore consequatur Molestiae cillum aliqua Eu ipsum sint aut sit error', 'PUNJAB', 'DERA GHAZI KHAN', 'MUZAFFARGARH', 'JATOI', 'Ullamco cupidatat reprehenderit et non maxime porro velit sed sunt occaecat voluptatem labore facere', 'Becholares 3 years', 'Lorem molestias eaque ut labore iusto mollit aut et quaerat', 2007, 'Abroad', 'Select', 'Consequatur magni consequat Autem sit voluptatem voluptas rerum cillum', 'Sunt qui ut anim molestias natus nostrum ut quo corporis quia quia saepe laudantium aut voluptate vero ea nemo non', 'Maxime quidem eiusmod nostrud dolorum sint architecto veniam soluta omnis dolorum quo quia eu', 0, 1, 'B.Ed', '', 2013, 'Aut sint non eum omnis porro ipsa excepturi nostrud eos maiores', 'Employed', 'Quo enim enim eius sint quo ea ut reiciendis', 'Expedita esse eu placeat ut magnam sed quaerat Nam voluptates esse et fugit dolorum libero ad sit dolorum aut', 'Douglas Vaughn Trading', 'SINDH', 'Select', 'Select', 'Select', 'Voluptas esse quis aut iusto nulla veniam', 'no', 'yes', 'no', 'no', 0, 'Becholars', 'no', 'no', '', '', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/36774193_285635785318366_8221331887247851520_n.jpg', '../assets/uploads/AcademicDocuments/QadreeCollections_FBCover.png'),
-(48, 'Camilla', 'Christine Espinoza', 'Munoz', 'Engr.', 'Other', 'Yuri', 'Gisela Franks', 'Key', '11111-1111111-1', '1976-09-11', 'nyqicetupi@mailinator.com', '+92 (112) 222-2222', '+92 (22) 222-2222', '+92 (222) 222-2222', 'AZAD KASHMIR', 'MIRPUR', 'BHIMBER', 'BHIMBER', 'Ratione iure ea autem cumque animi adipisicing omnis dolores quaerat est rerum est sapiente quasi dolore perferendis dignissimos', 'PhD', 'Culpa eiusmod duis reiciendis odit qui sunt do sequi voluptate sequi in velit veritatis', 1991, 'Pakistan', '3', '', '', '', 4, 2, 'Select', '', 0, '', 'Employed', 'Ducimus facilis provident ut velit et ut nulla velit adipisci ratione aute voluptate eius ex est', 'Irure itaque voluptatem maxime sint et odit nobis ullamco', 'Mclaughlin Hill Trading', 'FEDERAL', 'Select', 'Select', 'Select', 'Incididunt porro nihil atque possimus recusandae Nulla non laboris atque soluta in non quia delectus quam consequat Sunt', 'yes', 'yes', 'no', 'no', 0, 'Intermediate', 'yes', 'no', '', '', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/36774193_285635785318366_8221331887247851520_n.jpg', '../assets/uploads/AcademicDocuments/QadreeCollections_FBCover.png'),
-(49, 'Jamal', 'Xavier Davidson', 'Mcknight', 'Engr.', 'Female', 'Jocelyn', 'Whilemina Boyd', 'Beck', '11111-1111111-1', '1987-06-23', 'doguga@mailinator.net', '+92 (691) 231-2312', '+92 (12) 312-3123', '+92 (123) 123-1231', 'KHYBER PAKHTUNKHWA', 'MARDAN', 'SWABI', 'RAZAR', 'Deserunt duis nisi ipsum fugit ut sed in natus ut corrupti eos unde soluta nihil voluptatem sed in officia', 'PhD', 'Est et sint rerum velit exercitation nihil', 2004, 'Pakistan', '2', '', '', '', 5, 2, 'CT', '', 2006, 'In aute quia cupidatat qui voluptas cupidatat omnis qui laboris minim mollit possimus exercitationem cillum eos quis aut id sint', 'UnEmployed', '', '', '', 'select', 'Select', 'Select', 'Select', '', 'Select', 'Select', 'Select', 'Select', 0, 'Becholars', 'no', 'yes', '', '', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/36774193_285635785318366_8221331887247851520_n.jpg', '../assets/uploads/AcademicDocuments/QadreeCollections_FBCover.png'),
-(50, 'Phillip', 'Eleanor Ayala', 'Holden', 'Engr.', 'Female', 'Shellie', 'Renee Molina', 'Oneill', '11111-1111111-1', '2002-09-07', 'jivype@mailinator.net', '+92 (322) 222-2222', '+92 (33) 333-3333', '+92 (555) 555-5555', 'BALOCHISTAN', 'MEKRAN', 'KECH (AT TURBAT)', 'TUMP', 'Soluta recusandae At ullamco laboriosam non qui consequatur', 'Bachelors 3 years', 'Ea ut non ea suscipit consequatur quasi sit fugiat non maxime iste deserunt eos eaque pariatur Nihil quia ea quae', 2014, 'Pakistan', '5', '', '', '', 4, 3, 'CT', '', 1991, 'Aut cumque repudiandae aut maiores consectetur saepe ipsam necessitatibus totam delectus veniam labore quia officia et reprehenderit natus ex', 'Employed', 'Ab blanditiis consectetur adipisci cupiditate ipsum expedita qui rerum omnis maiores cum cupidatat', 'Aut mollit quo ipsam laboriosam eaque accusamus magnam dignissimos tempore ex quo quia in illo', 'Wall and Gonzales Trading', 'AZAD', 'MUZAFFARABAD', 'HATTIAN BALA', 'HATTIAN BALA', 'Fugiat amet quas quia totam sit dolorem totam dolorem qui eum aspernatur enim error eos nostrum nemo voluptas veniam', 'yes', 'yes', 'yes', 'yes', 2013, 'Intermediate', 'no', 'no', '', '', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/36774193_285635785318366_8221331887247851520_n.jpg', '../assets/uploads/AcademicDocuments/QadreeCollections_FBCover.png'),
-(51, 'Olga', 'Igor Harding', 'Carter', 'Dr.', 'Male', 'Gil', 'Rebecca Bray', 'Sharpe', '11111-1111111-1', '1994-06-29', 'qyxanojabo@mailinator.net', '+92 (305) 222-2222', '+92 (33) 333-3333', '+92 (444) 444-4444', 'KHYBER PAKHTUNKHWA', 'HAZARA', 'HARIPUR', 'HARIPUR', 'Dolore saepe labore quibusdam est est est', 'MS or MPhil', 'Blanditiis placeat rerum sit doloribus ut deserunt Nam laboris id aliquid distinctio Voluptates at', 2015, 'Abroad', 'Select', 'Saepe quos ratione cupiditate sunt eos mollit nemo cupiditate possimus soluta mollitia', 'Cupiditate necessitatibus veniam voluptas explicabo Velit iure odio', 'Magnam maiores et voluptatibus quis enim illo debitis necessitatibus numquam eos accusamus vitae eius est', 4, 3, 'B.Ed', '', 2008, 'Dolores veniam vel qui illum nobis dolor in est rerum dolor ex aut sint', 'UnEmployed', '', '', '', 'select', 'Select', 'Select', 'Select', '', 'Select', 'Select', 'Select', 'yes', 0, 'PhD', 'no', 'no', '', '', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/36774193_285635785318366_8221331887247851520_n.jpg', '../assets/uploads/AcademicDocuments/QadreeCollections_FBCover.png'),
-(52, 'Georgia', 'Kaitlin Carson', 'Hunter', 'Miss', 'Other', 'Julian', 'Brenda Barber', 'Sutton', '11111-1111111-1', '2005-02-04', '', '+92 ', '+92 ', '+92 ', 'Select', 'Select', 'Select', 'Select', '', 'Bachelors 3 years', 'Necessitatibus magni nulla optio nihil sit quaerat accusantium dolores est exercitation aute blanditiis do lorem nulla animi ut', 2009, 'Pakistan', 'University of Engineering and Technology', '', '', '', 4, 2, '', '', 0, '', 'UnEmployed', '', '', '', 'Select', 'Select', 'Select', 'Select', '', '', '', '', '', 0, 'Middle', 'yes', 'Post 4', '', '', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/DSJKhushab_Ad2.jpg', '../assets/uploads/AcademicDocuments/29983139_1740178359382009_6073381984704855731_o.jpg'),
-(53, 'Elaine', 'Lenore Mcfadden', 'Lambert', 'Engr.', 'Female', 'Rajah', 'Jerry Brown', 'Cain', '22222-2222222-2', '1992-09-08', 'qumuzyrul@mailinator.net', '+92 (333) 333-3333', '+92 (44) 444-4444', '+92 (555) 555-5555', 'GILGIT BALTISTAN', 'BALTISTAN', 'GHANCHE (AT KHAPLU)', 'MASHABRUM', 'Ab accusantium nihil nesciunt autem harum dolore inventore voluptas possimus voluptatem ducimus ipsum eum labore rem officia nostrum quod excepteur', 'Bachelors 4 years', 'Unde natus blanditiis laboriosam libero illum', 1993, 'Pakistan', 'Air Fundation', '', '', '', 4, 3, '', '', 0, '', 'Employed', 'Maxime est est sit eligendi nulla', 'Architecto quasi dolor sit pariatur Suscipit consectetur velit labore aliqua Animi enim dolore ipsa', 'Warren and Avery Co', 'F.A.T.A.', 'N/A', 'F.R. KOHAT DISTRICT', '', 'Omnis obcaecati incididunt voluptas id ad et porro est voluptatem anim commodi cupiditate adipisci', 'no', 'no', 'no', 'no', 2014, 'Primary', 'yes', 'Post 2', '', '', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/DSJKhushab_Ad2.jpg', '../assets/uploads/AcademicDocuments/29983139_1740178359382009_6073381984704855731_o.jpg'),
-(54, 'Ima', 'John Nash', 'Payne', 'Engr.', 'Male', 'Mechelle', 'Ursa Odonnell', 'Lynn', '33333-3333333-3', '2002-07-04', 'kyra@mailinator.com', '+92 (612) 111-1111', '+92 (22) 222-2222', '+92 (333) 333-3333', 'GILGIT BALTISTAN', 'BALTISTAN', 'BALTISTAN (AT SKARDU)', 'RONDU', 'In dignissimos enim culpa consequatur Vero aut nostrum quia labore', 'Masters', 'Et id proident dolores quia aut aut veniam occaecat in reprehenderit quia nihil', 2010, 'Abroad', '', 'Exercitation dolores deserunt rerum distinctio', 'Tenetur optio labore omnis vel dolor voluptas qui velit veniam non porro qui sit proident molestiae quasi suscipit magnam', 'Quod libero laboris eos temporibus', 4, 3, 'Other', 'asdasdasd', 2007, 'Inventore ea in ad nulla magna pariatur Reprehenderit asperiores officia ullamco consequatur', 'UnEmployed', '', '', '', 'Select', 'Select', 'Select', 'Select', '', '', '', '', '', 0, 'Select', 'yes', 'no', 'yes', 'Post 1', '0000-00-00 00:00:00', 0, '../assets/uploads/Pictures/36774193_285635785318366_8221331887247851520_n.jpg', '../assets/uploads/AcademicDocuments/QadreeCollections_FBCover.png');
 
 -- --------------------------------------------------------
 
@@ -128,15 +106,6 @@ CREATE TABLE `tbl_invigexperience` (
   `From` date DEFAULT NULL,
   `To` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_invigexperience`
---
-
-INSERT INTO `tbl_invigexperience` (`AppID`, `ExpID`, `LevelMarked`, `From`, `To`) VALUES
-(52, 1, 'Primary', '0000-00-00', '0000-00-00'),
-(53, 1, 'Intermediate', '0000-00-00', '0000-00-00'),
-(54, 1, 'Intermediate', '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -767,32 +736,6 @@ CREATE TABLE `tbl_markingexperience` (
   `To` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tbl_markingexperience`
---
-
-INSERT INTO `tbl_markingexperience` (`AppID`, `ExpID`, `LevelMarked`, `From`, `To`) VALUES
-(34, 1, 'Intermediate', '2009-08-19', '1990-02-22'),
-(35, 1, 'Intermediate', '2009-08-19', '1990-02-22'),
-(36, 1, 'Middle', '1993-01-27', '2003-09-28'),
-(37, 1, 'MS or MPhil', '2003-12-17', '1998-04-08'),
-(38, 1, 'PhD', '1985-02-24', '1987-03-22'),
-(39, 1, 'Becholars', '1995-01-05', '1990-12-22'),
-(40, 1, 'Middle', '1976-05-04', '1999-06-28'),
-(41, 1, 'PhD', '2018-05-24', '2004-09-08'),
-(42, 1, 'PhD', '2018-05-24', '2004-09-08'),
-(43, 1, 'PhD', '2018-05-24', '2004-09-08'),
-(44, 1, 'PhD', '2018-05-24', '2004-09-08'),
-(45, 1, 'PhD', '2018-05-24', '2004-09-08'),
-(48, 1, 'MS or MPhil', '0000-00-00', '0000-00-00'),
-(49, 1, 'Intermediate', '0000-00-00', '0000-00-00'),
-(50, 1, 'Intermediate', '0000-00-00', '0000-00-00'),
-(51, 1, 'Primary', '0000-00-00', '0000-00-00'),
-(51, 2, 'Primary', '0000-00-00', '0000-00-00'),
-(52, 1, 'Primary', '0000-00-00', '0000-00-00'),
-(53, 1, 'Intermediate', '0000-00-00', '0000-00-00'),
-(54, 1, 'Intermediate', '0000-00-00', '0000-00-00');
-
 -- --------------------------------------------------------
 
 --
@@ -804,31 +747,6 @@ CREATE TABLE `tbl_marking_subjects` (
   `SID` bigint(20) NOT NULL,
   `Subject` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_marking_subjects`
---
-
-INSERT INTO `tbl_marking_subjects` (`AppID`, `SID`, `Subject`) VALUES
-(34, 1, 'Irure nisi qui quod sapiente commodi sit quae distinctio In error nesciunt'),
-(35, 1, 'Irure nisi qui quod sapiente commodi sit quae distinctio In error nesciunt'),
-(36, 1, 'Sit qui nisi sit possimus a commodi qui vitae modi sunt nisi vero'),
-(37, 1, 'Sunt laborum aut ut veritatis deleniti in obcaecati reprehenderit voluptatem sed provident dignissimos'),
-(38, 1, 'Dignissimos quo nostrud expedita explicabo Excepturi'),
-(39, 1, 'Sed dicta et ab aute'),
-(40, 1, 'Ea quaerat veritatis ipsum enim sit ad nesciunt deserunt consequatur nihil commodi mollitia debitis dolorum maiores ut est officia eligendi'),
-(41, 1, 'Ipsa eius libero ad autem nihil elit'),
-(42, 1, 'Ipsa eius libero ad autem nihil elit'),
-(43, 1, 'Ipsa eius libero ad autem nihil elit'),
-(44, 1, 'Ipsa eius libero ad autem nihil elit'),
-(45, 1, 'Ipsa eius libero ad autem nihil elit'),
-(48, 1, 'Nisi laborum Dolor hic sit sunt excepturi ut vitae obcaecati eu error placeat'),
-(49, 1, 'Deserunt voluptate qui ut possimus ut quam voluptate amet sint quasi ut officiis quidem est'),
-(50, 1, 'Hic quis eum laboriosam ex officia et voluptates blanditiis illo nesciunt similique maiores in'),
-(51, 1, 'Dolorum beatae fugiat duis commodo ad qui voluptatibus et quod autem dolor eum est numquam tenetur harum'),
-(52, 1, 'Id optio rerum rerum sed quibusdam fugiat consequatur Sed corporis nostrud in commodo nisi sit'),
-(53, 1, 'Dolore ab delectus quia sit qui consectetur dolore quo nesciunt amet quidem sed vel sed voluptate ipsum corporis dolor modi'),
-(54, 1, 'Enim voluptate obcaecati odit maxime tempore quis modi et quo ea voluptatibus quia');
 
 -- --------------------------------------------------------
 
@@ -844,31 +762,6 @@ CREATE TABLE `tbl_teachingexperience` (
   `To` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tbl_teachingexperience`
---
-
-INSERT INTO `tbl_teachingexperience` (`AppID`, `ExpID`, `LevelTaught`, `From`, `To`) VALUES
-(34, 1, 'Intermediate', '2009-08-19', '1990-02-22'),
-(35, 1, 'Intermediate', '2009-08-19', '1990-02-22'),
-(36, 1, 'Middle', '1993-01-27', '2003-09-28'),
-(37, 1, 'MS or MPhil', '2003-12-17', '1998-04-08'),
-(38, 1, 'PhD', '1985-02-24', '1987-03-22'),
-(39, 1, 'Becholars', '1995-01-05', '1990-12-22'),
-(40, 1, 'Middle', '1976-05-04', '1999-06-28'),
-(41, 1, 'PhD', '2018-05-24', '2004-09-08'),
-(42, 1, 'PhD', '2018-05-24', '2004-09-08'),
-(43, 1, 'PhD', '2018-05-24', '2004-09-08'),
-(44, 1, 'PhD', '2018-05-24', '2004-09-08'),
-(45, 1, 'PhD', '2018-05-24', '2004-09-08'),
-(48, 1, 'MS or MPhil', '0000-00-00', '0000-00-00'),
-(49, 1, 'Intermediate', '0000-00-00', '0000-00-00'),
-(50, 1, 'Intermediate', '0000-00-00', '0000-00-00'),
-(51, 1, 'Primary', '0000-00-00', '0000-00-00'),
-(52, 1, 'Primary', '0000-00-00', '0000-00-00'),
-(53, 1, 'Intermediate', '0000-00-00', '0000-00-00'),
-(54, 1, 'Intermediate', '0000-00-00', '0000-00-00');
-
 -- --------------------------------------------------------
 
 --
@@ -880,31 +773,6 @@ CREATE TABLE `tbl_te_subjects` (
   `SID` bigint(20) NOT NULL,
   `Subject` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_te_subjects`
---
-
-INSERT INTO `tbl_te_subjects` (`AppID`, `SID`, `Subject`) VALUES
-(34, 1, 'In voluptas dolor exercitation ea commodo excepteur vero elit inventore dolor facilis vel'),
-(35, 1, 'In voluptas dolor exercitation ea commodo excepteur vero elit inventore dolor facilis vel'),
-(36, 1, 'Sed id voluptate quaerat ab quam asperiores'),
-(37, 1, 'Do itaque aut possimus debitis ipsa inventore in magna delectus aut rem eiusmod temporibus eum aliquam iste sequi cumque maxime'),
-(38, 1, 'Mollit ducimus tenetur quaerat praesentium amet nobis obcaecati perspiciatis consequuntur anim debitis incidunt ut occaecat voluptatum temporibus consectetur'),
-(39, 1, 'Quia laboris ipsam consectetur officia perspiciatis qui aliquid'),
-(40, 1, 'Vero incididunt nostrum vel dignissimos est aut consequatur molestiae culpa itaque consequatur rerum voluptas aspernatur'),
-(41, 1, 'Nemo et ipsa laudantium ipsa quis labore quod explicabo Quaerat qui est'),
-(42, 1, 'Nemo et ipsa laudantium ipsa quis labore quod explicabo Quaerat qui est'),
-(43, 1, 'Nemo et ipsa laudantium ipsa quis labore quod explicabo Quaerat qui est'),
-(44, 1, 'Nemo et ipsa laudantium ipsa quis labore quod explicabo Quaerat qui est'),
-(45, 1, 'Nemo et ipsa laudantium ipsa quis labore quod explicabo Quaerat qui est'),
-(48, 1, 'Eaque officiis veniam sed eveniet id est commodo ducimus repellendus Deserunt sit voluptatum'),
-(49, 1, 'Deserunt eos aspernatur consectetur fuga Cumque quis sit in soluta duis quis ullam voluptatem'),
-(50, 1, 'Autem asperiores quam dignissimos molestiae voluptate omnis sed illo aut pariatur'),
-(51, 1, 'Delectus sint voluptate itaque ducimus adipisci voluptate iure sit non omnis dolorem dolor vero iure possimus culpa quia'),
-(52, 1, 'Velit voluptatibus rem corrupti aliquam dolore eu pariatur Expedita totam sint et non voluptas rerum soluta'),
-(53, 1, 'Veritatis autem sapiente iusto vel ad adipisci esse quae quia labore nesciunt'),
-(54, 1, 'Modi sed provident commodo ad ratione sint nihil sit');
 
 -- --------------------------------------------------------
 
@@ -1168,11 +1036,17 @@ ALTER TABLE `tbl_universities`
 -- AUTO_INCREMENT for table `tbl_applicant`
 --
 ALTER TABLE `tbl_applicant`
-  MODIFY `AppID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `AppID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `tbl_invigexperience`
+--
+ALTER TABLE `tbl_invigexperience`
+  ADD CONSTRAINT `ApplicationInvig` FOREIGN KEY (`AppID`) REFERENCES `tbl_applicant` (`AppID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `tbl_markingexperience`
